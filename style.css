@@ -437,3 +437,38 @@ nav a:hover {
     font-size: 0.82rem;
   }
 }
+
+/* ---------- Mobile hero: name overlaps the photo ---------- */
+@media (max-width: 800px) {
+  header img {
+    width: 250px;
+    margin: 0;
+    justify-self: end;
+    /* fade the photo's flat bottom edge so the name sits on it cleanly */
+    -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+  }
+
+  header h1 {
+    position: relative;
+    z-index: 2;
+    margin: -3.2rem 0 0;
+    color: #ffffff;
+    /* white text turns black on light areas and stays white over the dark jacket */
+    mix-blend-mode: difference;
+  }
+
+  /* all five nav links fit on one line, spaced evenly */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 1.1rem;
+    overflow: visible;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 0.3rem 0.2rem;
+    font-size: 0.8rem;
+  }
+}
